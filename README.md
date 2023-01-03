@@ -64,7 +64,7 @@
   </ul>
 </ul>
 
-<h4>FEATURE 5: DATA VISUALIZATION</h4>
+<h4>FEATURE 4: DATA VISUALIZATION</h4>
 <ul>
 <h5>Scenario 1: Show a chart with the number of upcoming events in each city</h5>
   <ul>
