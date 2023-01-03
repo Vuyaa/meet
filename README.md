@@ -1,6 +1,6 @@
 # meet
 
-<h3> User Stories:<h3>
+<h2> User Stories:</h2>
 <ul> 
 <li>As a user, I would like to be able to show or hide event details so that I can see more or less information about an event</li>
 <li>As a user, I would like to be able to specify the number of events I want to view in the app so that I can see more or fewer events in the events list at once</li>
