@@ -18,7 +18,6 @@ class NumberOfEvents extends Component {
   }
 
   render() {
-    const { noe } = this.state;
     return (
       <div className="numOfEvents">
         <h2>Number Of Events</h2>

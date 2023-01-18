@@ -19,6 +19,7 @@ describe("<Event /> component", () => {
     expect(EventWrapper.find(".start p")).toBeDefined();
   });
   
+  
   test("details are hidden before details button is pushed", () => {
     const detailsButton = EventWrapper.find("details-btn");
     expect(EventWrapper.state("collapsed")).toBe(true);
@@ -26,6 +27,7 @@ describe("<Event /> component", () => {
     expect(EventWrapper.find(".summary h1")).toBeDefined();
     expect(EventWrapper.find(".start p")).toBeDefined();
   });
+
   test("details are expanded when button is pushed", () => {
     EventWrapper.find(".details-btn").simulate("click");
     expect(EventWrapper.state("collapsed")).toBe(false);
