@@ -21,7 +21,7 @@ describe("<Event /> component", () => {
   
   
   test("details are hidden before details button is pushed", () => {
-    const detailsButton = EventWrapper.find("details-btn");
+    const detailsButton = EventWrapper.find(".details-btn");
     expect(EventWrapper.state("collapsed")).toBe(true);
     expect(detailsButton).toBeDefined();
     expect(EventWrapper.find(".summary h1")).toBeDefined();
