@@ -57,6 +57,8 @@ class App extends Component {
     }
   };
 
+  
+
   render() {
     return (
       <div className="App">
@@ -69,7 +71,8 @@ class App extends Component {
           eventCount={this.state.eventCount}
           // updateNumQuery={(eventCount) => this.updateNumQuery(eventCount)}
         />
-        <EventList events={this.state.events} />
+        <EventList events={this.state.events} 
+        />
       </div>
     );
   }
