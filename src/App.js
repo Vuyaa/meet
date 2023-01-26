@@ -5,6 +5,11 @@ import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import "./nprogress.css";
 import { extractLocations, getEvents } from "./api";
+import { OfflineAlert } from "./Alert";
+import WelcomeScreen from "./WelcomeScreen";
+import { getAccessToken } from "./api";
+import { checkToken } from "./api";
+
 
 class App extends Component {
   state = {
@@ -12,17 +17,27 @@ class App extends Component {
     locations: [],
     selectedLocation: "all",
     eventCount: 32,
+    showWelcomeScreen: undefined,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        events = events.slice(0, this.state.eventCount);
-        this.setState({ events, locations: extractLocations(events) });
-      }
-    });
+    const accessToken = localStorage.getItem('access_token');
+    const isTokenValid = (await checkToken(accessToken)).error ? false :
+    true;
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("code");
+    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    
+    if ((code || isTokenValid) && this.mounted) {
+      getEvents().then((events) => {
+        if (this.mounted) {
+          this.setState({ events, locations: extractLocations(events) });
+        }
+      });
+    }
   }
+
 
   componentWillUnmount() {
     this.mounted = false;
@@ -60,8 +75,19 @@ class App extends Component {
   
 
   render() {
+    if (this.state.showWelcomeScreen === undefined) return <div
+className="App" />
     return (
       <div className="App">
+                <div className="OfflineAlert">
+          {!navigator.onLine && (
+            <OfflineAlert
+              text={
+                'There is no internet connection. Events may not be up to date'
+              }
+            />
+          )}
+        </div>
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
@@ -73,6 +99,8 @@ class App extends Component {
         />
         <EventList events={this.state.events} 
         />
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+getAccessToken={() => { getAccessToken() }} />
       </div>
     );
   }

@@ -49,6 +49,10 @@ input[type="number"] {
   position: relative;
 }
 
+.Alert{
+  position: initial !important;
+}
+
 .suggestions {
   width: 250px;
   position: absolute;
@@ -128,10 +132,6 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
-  position: fixed;
-  top: 20px;
-}
 
 .data-vis-wrapper {
   display: flex;
