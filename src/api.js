@@ -49,7 +49,7 @@ export const getEvents = async () => {
   if (!navigator.onLine) {
     const data = localStorage.getItem("lastEvents");
     NProgress.done();
-    return data ? JSON.parse(data).events : [];;
+    return data ? JSON.parse(data).events : [];
   }
   
   const token = await getAccessToken();
@@ -70,9 +70,6 @@ export const getEvents = async () => {
     return result.data.events;
   }
 };
-
-
-
 
 const removeQuery = () => {
   if (window.history.pushState && window.location.pathname) {
