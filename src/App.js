@@ -10,7 +10,7 @@ import WelcomeScreen from "./WelcomeScreen";
 import { getAccessToken } from "./api";
 import { checkToken } from "./api";
 import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 
@@ -109,9 +109,8 @@ class App extends Component {
           eventCount={this.state.eventCount}
           // updateNumQuery={(eventCount) => this.updateNumQuery(eventCount)}
         />
+        <ResponsiveContainer height={400} >
         <ScatterChart
-          width={400}
-          height={400}
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
           }}
@@ -120,12 +119,15 @@ class App extends Component {
           <XAxis type="category" dataKey="city" name="city"  />
           <YAxis type="number" dataKey="number"  name="number of Events" allowDecimals={false} />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter data={this.getData} fill="#8884d8" />
+          <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
+        </ResponsiveContainer>
         <EventList events={this.state.events} 
         />
+        
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-getAccessToken={() => { getAccessToken() }} />
+        getAccessToken={() => { getAccessToken() }} />
+
       </div>
     );
   }
