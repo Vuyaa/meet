@@ -23,15 +23,6 @@ class App extends Component {
     showWelcomeScreen: undefined,
   };
 
-  getData = () => {
-    const {locations, events} = this.state;
-    const data = locations.map((location)=>{
-      const number = events.filter((event) => event.location === location).length
-      const city = location.split(', ').shift()
-      return {city, number};
-    })
-    return data;
-  };
 
   async componentDidMount() {
     this.mounted = true;
@@ -85,6 +76,16 @@ class App extends Component {
     }
   };
 
+  getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return {city, number};
+    })
+    return data;
+  };
+
   
 
   render() {
@@ -116,7 +117,7 @@ class App extends Component {
           }}
         >
           <CartesianGrid />
-          <XAxis type="category" dataKey="city" name="city"  />
+          <XAxis type="category" dataKey="city" name="City"  />
           <YAxis type="number" dataKey="number"  name="number of Events" allowDecimals={false} />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter data={this.getData()} fill="#8884d8" />
