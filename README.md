@@ -5,7 +5,7 @@
 <img src="https://vuyaa.github.io/portfolio-website/img/meet2.png">
 
 <h3>Description:</h3>
-The meetApp is a progressive web application (PWA) developed to connect the developers and everyone who finds IT world interesting from the same area.
+The meetApp is a progressive web application (PWA) developed to connect developers from the same area and everyone who finds IT world interesting .
 It can filter events by the city and the subject refered to the specific city. 
 
 <h3>Technologies used:</h3>
