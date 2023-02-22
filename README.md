@@ -1,5 +1,21 @@
 # meet
 
+<h3>Description:</h3>
+The meetApp is a progressive web application (PWA) developed to connect the developers and everyone who finds IT world interesting from the same area.
+It can filter events by the city and the subject refered to the specific city. 
+
+<h3>Technologies used:</h3>
+<ul>
+<li>React</li>
+<li>AWS lambda</li>
+<li>Google Calendar API</li>
+<li>OAuth2 authentication flow</li>
+<li>Tailwind CSS</li>
+<li>Unit & Integration Testing: Jest, Enzyme</li>
+<li>Acceptance Testing: Jest Cucumber</li>
+<li>End-to-end Testing: Puppeteer</li>
+</ul>
+
 <h3> User Stories:</h3>
 <ul> 
 <li>As a user, I would like to be able to show or hide event details so that I can see more or less information about an event</li>
