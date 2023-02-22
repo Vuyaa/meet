@@ -1,4 +1,8 @@
 # meet
+<h3>Chart screenshot:</h3>
+<img src="https://vuyaa.github.io/portfolio-website/img/meet1.png">
+<h3>Chart screenshot:</h3>
+<img src="https://vuyaa.github.io/portfolio-website/img/meet2.png">
 
 <h3>Description:</h3>
 The meetApp is a progressive web application (PWA) developed to connect the developers and everyone who finds IT world interesting from the same area.
