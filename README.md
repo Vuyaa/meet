@@ -9,7 +9,7 @@ The meetApp is a progressive web application (PWA) developed to connect develope
 It can filter events by the city and the subject refered to the specific city. 
 
 <h3>Live demo:</h3>
-<p>The PWA is hosted live on <a src="https://vuyaa.github.io/meet/" target="_blank">this adress!</a><p>
+<p>The PWA is hosted live on <a href="https://vuyaa.github.io/meet/">this link!</a></p>
 
 <h3>Technologies used:</h3>
 <ul>
